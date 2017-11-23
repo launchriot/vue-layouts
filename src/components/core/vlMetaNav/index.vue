@@ -8,11 +8,11 @@
         <a href="#"><i class="fa fa-bell"></i></a>
       </li>
       <li class="meta-nav-item meta-nav-user meta-nav-dropdown">
-        <a v-on:click='showDropdown = !showDropdown'>a.prop@here.com <i class="fa fa-caret-down"></i></a>
+        <a v-on:click='showDropdown = !showDropdown'>your.name@email.com <i class="fa fa-caret-down"></i></a>
         <div class="meta-nav-dropdown" v-if="showDropdown">
           <ul class="meta-nav-dropdown-menu">
             <li class="meta-nav-dropdown-title">
-              <span>a.prop@here.com</span>
+              <span>your.name@email.com</span>
               <span class="close-icon" v-on:click='showDropdown = !showDropdown'><i class="fa fa-close"></i></span>
             </li>
             <li class="meta-nav-dropdown-item">

@@ -23,6 +23,13 @@
   margin-right: auto;
   margin-left: auto;
   max-width: 1200px;
+  padding-left:1em;
+  padding-right:1em;
+  transition: all .5s ease-out;
+
+  @include media("<tablet") {
+  	padding:0;
+  }
 }
 
 // Main Styles
