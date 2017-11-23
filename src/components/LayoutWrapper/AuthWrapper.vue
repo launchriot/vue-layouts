@@ -2,10 +2,7 @@
   <div class="auth-layout-wrapper">
     <header class="auth-header"></header>
     <div class="auth-top">
-      <span class="logo">
-        <img src="~@/assets/images/logo.svg">
-        <p>Vue Layouts</p>
-      </span>
+      <Logo />
     </div>
     <div class="row">
       <div class="auth-main-body col-md-4 offset-md-4">
@@ -61,6 +58,7 @@ body {
 
     p {
       display: inline-block;
+      font-family: $font-family-logo;
     }
   }
 }

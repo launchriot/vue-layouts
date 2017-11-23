@@ -3,12 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VLComponents from '@/components'
 
 // Libraries
 import 'bootstrap/dist/css/bootstrap.css'
 import './assets/sass/main.scss'
 
 Vue.config.productionTip = false
+
+Vue.use(VLComponents)
 
 /* eslint-disable no-new */
 new Vue({
