@@ -1,0 +1,57 @@
+// Fonts
+@mixin placeholder {
+  &::placeholder               { @content }
+  &::-webkit-input-placeholder { @content }
+  &:-moz-placeholder           { @content }
+  &::-moz-placeholder          { @content }
+  &:-ms-input-placeholder      { @content }  
+}
+
+// Shadows
+@mixin box-shadow($color, $opacity) {
+  box-shadow: 0px 5px 7px 1px rgba($color, $opacity);
+}
+
+// Buttons
+@mixin btn-styles($btn-color) {
+
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &:active:focus,
+    &:active:hover,
+    &.active:focus,
+    &.active:hover,
+    .open > &.dropdown-toggle,
+    .open > &.dropdown-toggle:focus,
+    .open > &.dropdown-toggle:hover {
+      background-color: $btn-color;
+      color: $brand-white;
+    }
+
+    &:focus,
+    &:active,
+    &:hover{
+      @include box-shadow($btn-color, .3);
+      background-color: lighten($btn-color,10%);
+      cursor: pointer;
+    }
+
+  &.disabled,
+  &:disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+        box-shadow: none;
+        opacity: .35;
+    }
+  }
+
+}

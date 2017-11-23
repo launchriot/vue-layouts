@@ -22,7 +22,7 @@
               <a href="#">My Settings</a>
             </li>
             <li class="meta-nav-dropdown-item">
-              <a href="#">Logout</a>
+              <a href="/#/login">Logout</a>
             </li>
           </ul>
         </div>

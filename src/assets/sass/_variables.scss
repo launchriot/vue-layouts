@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous');
 
 @import '_breakpoints';
+@import '_mixins';
 
 /* =========================================================
    Vue Layouts Colors Nov 2017
@@ -33,10 +34,12 @@ $brand-grey:          $vl-grey !default;
 $highlight:           lighten($brand-grey, 45%);
 
 // Layout Variables
-$background-default: lighten($brand-grey, 45%);
-$border-radius: .2em;
-$box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.1);
-$side-padding: 1em;
+$background-default: 	lighten($brand-grey, 45%);
+$border-radius: 		.2em;
+$box-shadow: 			0px 5px 7px 1px rgba(0, 0, 0, 0.1);
+$side-padding: 			1em;
+$border-width-default:	.15em;
+$border-default:		$border-width-default solid lighten($brand-grey, 45%);
 
 // Override info button color
 $btn-info-color:    darken($brand-info, 25);
@@ -55,6 +58,7 @@ $font-size-base: 14px !default;
 
 $font-weight-bold:   500;
 
+$font-size-large:  	1.2em;
 $font-size-medium:   .9em;
 $font-size-small:   .85em;
 $font-size-xsmall:  .75em;

@@ -18,6 +18,12 @@ export default new Router({
       meta: {authLayout: true}
     },
     {
+      path: '/login',
+      name: 'Log In',
+      component: LogIn,
+      meta: {authLayout: true}
+    },
+    {
       path: '/dashboard',
       name: 'Dashboard',
       component: Dashboard,

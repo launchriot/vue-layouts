@@ -1,0 +1,59 @@
+@import '_variables';
+
+// Form Field Labels
+
+label {
+	font-weight: $font-weight-bold;
+	font-size: $font-size-small;
+	margin-bottom: 0.3em
+}
+
+@mixin form-field() {
+	border: $border-default;
+	background-image: linear-gradient(darken($brand-white,2%), $brand-white);
+	background-size:100%;
+	background-repeat: no-repeat;
+	background-position: center bottom, center calc(100% - 1px);
+	background-color: rgba(0, 0, 0, 0);
+	transition: background 0s ease-out;
+	float: none;
+	box-shadow: none;
+	border-radius: 0;
+	font-weight: 400;
+	font-size:$font-size-small;
+	color: $brand-black;
+	&:focus{
+		border:$border-width-default solid $brand-success;
+		box-shadow: 0px 0px 0px 1px $brand-success;
+	}
+	&:hover{
+		background-color: $brand-white;
+		color: $brand-black;
+	}
+
+	&[readonly],
+	&[disabled],
+	fieldset[disabled] & {
+		background-color: darken($brand-white,2%);
+		color:$brand-grey;
+	}
+
+	@include placeholder {
+    	color: lighten($brand-black,50%);
+	}
+
+	&[disabled],
+	fieldset[disabled] & {
+		background-image: none;
+	}
+
+	&[error],
+	&[error]:focus,
+	fieldset[error] & {
+		background-image: none;
+		border: $border-width-default solid $brand-danger;
+		color: $brand-danger;
+		box-shadow: 0px 0px 0px 1px $brand-danger;
+		background-color: $brand-white;
+	}
+}

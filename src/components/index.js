@@ -6,6 +6,8 @@ import AppWrapper from './LayoutWrapper/AppWrapper'
 import Logo from './core/vlLogo'
 import MetaNav from './core/vlMetaNav'
 import PrimaryNav from './core/vlPrimaryNav'
+import Input from './core/vlInput'
+import Button from './core/vlButton'
 
 export default {
   install (Vue) {
@@ -14,5 +16,7 @@ export default {
     Vue.component(Logo.name, Logo)
     Vue.component(MetaNav.name, MetaNav)
     Vue.component(PrimaryNav.name, PrimaryNav)
+    Vue.component(Input.name, Input)
+    Vue.component(Button.name, Button)
   }
 }
