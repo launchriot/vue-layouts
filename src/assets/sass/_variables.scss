@@ -1,31 +1,32 @@
 // Import custom font from Google
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Righteous');
 
 /* =========================================================
    Vue Layouts Colors Nov 2017
    ========================================================= */
-$vl-white:				#FFFFFF !default;
-$vl-black:				#333333 !default;
-$vl-grey:				#7D7D7D !default;
+$vl-white:        #FFFFFF !default;
+$vl-black:        #333333 !default;
+$vl-grey:         #7D7D7D !default;
 
-$vl-blue: 				rgb(21, 140, 186) !default;
-$vl-green: 				rgb(40, 182, 44) !default;
-$vl-blue-light:			rgb(117, 202, 235) !default;
-$vl-orange:				rgb(255, 133, 27) !default;
-$vl-red:				rgb(255, 65, 54) !default;
+$vl-blue:         rgb(21, 140, 186) !default;
+$vl-green:        rgb(40, 182, 44) !default;
+$vl-blue-light:   rgb(117, 202, 235) !default;
+$vl-orange:       rgb(255, 133, 27) !default;
+$vl-red:          rgb(255, 65, 54) !default;
 
 
 // Set brand colors
-$brand-primary:		$vl-blue !default;
-$brand-secondary:	$vl-green !default;
-$brand-success: 	$vl-green !default;
-$brand-danger: 		$vl-red !default;
-$brand-warning: 	$vl-orange !default;
-$brand-info: 		$vl-blue-light !default;
-$brand-rose: 		lighten($vl-red, 20%) !default;
-$brand-white:		$vl-white !default;
-$brand-black:		$vl-black !default;
-$brand-grey:		$vl-grey !default;
+$brand-primary:       $vl-blue !default;
+$brand-secondary:     $vl-green !default;
+$brand-success:       $vl-green !default;
+$brand-danger:        $vl-red !default;
+$brand-warning:       $vl-orange !default;
+$brand-info:          $vl-blue-light !default;
+$brand-rose:          lighten($vl-red, 20%) !default;
+$brand-white:         $vl-white !default;
+$brand-black:         $vl-black !default;
+$brand-grey:          $vl-grey !default;
 
 // Layout Variables
 $background-default: lighten($brand-grey, 45%);
@@ -43,6 +44,7 @@ $font-family-sans-serif:  'Raleway', sans-serif;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
+$font-family-logo:        'Righteous', cursive;
 
 // Set global options
 $enable-shadows:    true;

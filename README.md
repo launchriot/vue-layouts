@@ -1,4 +1,4 @@
-# Vue Layout
+# Vue Layouts
 
 > A demo project using different layouts for different routes
 

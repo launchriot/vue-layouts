@@ -4,7 +4,7 @@
     <div class="auth-top">
       <span class="logo">
         <img src="~@/assets/images/logo.svg">
-        <p>Ipsum Co</p>
+        <p>Vue Layouts</p>
       </span>
     </div>
     <div class="row">
