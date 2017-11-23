@@ -1,0 +1,31 @@
+/*!
+    
+ =========================================================
+ * VueJs-Layouts - v0.0.1
+ =========================================================
+ 
+ * Copyright 2017 Avi Zuber <launchriot@gmail.com>
+ * Licensed under MIT or something.
+ 
+ =========================================================
+ 
+ * The above copyright notice and this permission notice shall be 
+   included in all copies or substantial portions of the Software,
+   I guess.
+ 
+ */
+
+ // Imports
+ @import "_variables";
+
+ // Some Bootstrap Layout Overrides
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1200px;
+}
+
+// Main Styles
+ body {
+  background: $background-default;
+ }
