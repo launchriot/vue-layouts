@@ -5,8 +5,8 @@
       <span class="vl-primary-nav-toggle" v-on:click='toggleDemo'><i class="fa fa-bars"></i></span>
       <ul class="primary-nav-menu" v-bind:class="[menuClosed ? hideMenu : !menuClosed, showMenu]">
         <!-- This will need to be replaced with actual router links -->
-        <li v-for="item in items" v-if="item.permissions" class="primary-nav-item-wrapper">
-          <span v-bind:class="{active : item.active}" class="primary-nav-item">{{item.name}}</span>
+        <li v-for="item in items" class="primary-nav-item-wrapper">
+          <router-link tag="span" :to="item.path" class="primary-nav-item" active-class="active">{{item.name}}</router-link>
         </li>
       </ul>
     </div>
