@@ -6,6 +6,7 @@ import router from './router'
 import VLComponents from '@/components'
 
 // Libraries
+import 'font-awesome/css/font-awesome.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import './assets/sass/main.scss'
 

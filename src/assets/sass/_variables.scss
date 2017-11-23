@@ -18,7 +18,7 @@ $vl-red:          rgb(255, 65, 54) !default;
 
 // Set brand colors
 $brand-primary:       $vl-blue !default;
-$brand-secondary:     $vl-green !default;
+$brand-secondary:     $vl-grey !default;
 $brand-success:       $vl-green !default;
 $brand-danger:        $vl-red !default;
 $brand-warning:       $vl-orange !default;
@@ -28,10 +28,13 @@ $brand-white:         $vl-white !default;
 $brand-black:         $vl-black !default;
 $brand-grey:          $vl-grey !default;
 
+$highlight:           lighten($brand-grey, 45%);
+
 // Layout Variables
 $background-default: lighten($brand-grey, 45%);
 $border-radius: .2em;
 $box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.1);
+$side-padding: 1em;
 
 // Override info button color
 $btn-info-color:    darken($brand-info, 25);
@@ -45,6 +48,11 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 $font-family-logo:        'Righteous', cursive;
+
+$font-weight-bold:   500;
+
+$font-size-small:   .8em;
+$font-size-xsmall:  .6em;
 
 // Set global options
 $enable-shadows:    true;
