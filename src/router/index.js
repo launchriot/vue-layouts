@@ -35,19 +35,21 @@ export default new Router({
       path: '/projects',
       name: 'Projects',
       component: Projects,
-      meta: {appLayout: true},
-      children: [
-        {
-          path: 'web',
-          name: 'Web Projects',
-          component: WebProjects
-        },
-        {
-          path: 'mobile',
-          name: 'Mobile Projects',
-          component: MobileProjects
-        }
-      ]
+      meta: {appLayout: true}
+    },
+    {
+      path: '/projects/web',
+      name: 'Web Projects',
+      component: WebProjects,
+      parent: 'Projects',
+      meta: {appLayout: true}
+    },
+    {
+      path: '/projects/mobile',
+      name: 'Mobile Projects',
+      component: MobileProjects,
+      parent: 'Projects',
+      meta: {appLayout: true}
     },
     {
       path: '/reports',

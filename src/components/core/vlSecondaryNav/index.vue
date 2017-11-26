@@ -1,10 +1,12 @@
 <template>
-  <div class="vl-secondary-nav">
-    <ul class="secondary-nav-menu">
-      <li v-for="item in items" class="secondary-nav-item-wrapper">
-        <router-link tag="span" :to="item.path" class="secondary-nav-item" active-class="active" :exact="true">{{item.name}}</router-link>
-      </li>
-    </ul>
+  <div class="vl-secondary-nav-wrapper">
+    <div class="vl-secondary-nav">
+      <ul class="secondary-nav-menu">
+        <li v-for="item in items" class="secondary-nav-item-wrapper">
+          <router-link tag="span" :to="item.path" class="secondary-nav-item" active-class="active">{{item.name}}</router-link>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 

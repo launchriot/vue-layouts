@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Mobile Projects'
+  name: 'MobileProjects'
 }
 </script>
 

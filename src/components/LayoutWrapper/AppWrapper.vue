@@ -2,6 +2,7 @@
   <div class="app-layout-wrapper">
     <vl-meta-nav></vl-meta-nav>
     <vl-primary-nav :items="items"></vl-primary-nav>
+    <vl-secondary-nav :items="items"></vl-secondary-nav>
     <div class="row app-main-body-wrapper">
       <div class="app-main-body col-md-12">
         <slot></slot>

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Web Projects'
+  name: 'WebProjects'
 }
 </script>
 
