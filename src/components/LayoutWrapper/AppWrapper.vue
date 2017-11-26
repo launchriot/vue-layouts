@@ -18,7 +18,8 @@ export default {
       if (route.meta.appLayout) {
         this.items.push({
           name: route.name,
-          path: route.path
+          path: route.path,
+          secondary: route.children
         })
       }
     })

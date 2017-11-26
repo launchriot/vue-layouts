@@ -2,13 +2,15 @@
   <div class="vl-primary-nav-wrapper">
     <div class="vl-primary-nav">
         <Logo />
-      <span class="vl-primary-nav-toggle" v-on:click='toggleDemo'><i class="fa fa-bars"></i></span>
+      <span class="vl-primary-nav-toggle" v-on:click='toggleMenu'><i class="fa fa-bars"></i></span>
       <ul class="primary-nav-menu" v-bind:class="[menuClosed ? hideMenu : !menuClosed, showMenu]">
-        <!-- This will need to be replaced with actual router links -->
         <li v-for="item in items" class="primary-nav-item-wrapper">
-          <router-link tag="span" :to="item.path" class="primary-nav-item" active-class="active">{{item.name}}</router-link>
+          <router-link tag="span" :to="item.path" class="primary-nav-item" active-class="active" :exact="true">{{item.name}}</router-link>
         </li>
       </ul>
+    </div>
+    <div v-for="item in items" v-if="item.secondary && matched(item)" class="secondary-wrapper">
+          <vl-secondary-nav :items="item.secondary"></vl-secondary-nav>
     </div>
   </div>
 </template>
@@ -28,8 +30,11 @@ export default {
     }
   },
   methods: {
-    toggleDemo () {
+    toggleMenu () {
       this.menuClosed = !this.menuClosed
+    },
+    matched (item) {
+      return this.$route.path === item.path
     }
   }
 }
@@ -186,6 +191,11 @@ ul.primary-nav-menu {
       }
     }
   }
+
+}
+
+.secondary-wrapper {
+  position:relative;
 
 }
 

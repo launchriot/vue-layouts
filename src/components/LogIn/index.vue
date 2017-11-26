@@ -3,7 +3,7 @@
     <h4>Log In</h4>
     <vl-input field-label="Email" type="email" placeholder="Your email address" v-model="email"/>
     <vl-input field-label="Password" type="password" placeholder="Your password" show-password v-model="password"/>
-    <vl-button href="/#/dashboard">Log In</vl-button>
+    <vl-button href="/#/dashboard" class="text-right">Log In</vl-button>
   </div>
 </template>
 

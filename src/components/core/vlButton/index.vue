@@ -24,6 +24,10 @@
 <style scoped lang="scss">
 @import "~@/assets/sass/_variables.scss";
 
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: none;
+}
+
 .btn, a.btn {
     border: none;
     border-radius: $border-radius;
@@ -77,7 +81,6 @@
         }
     }
 
-    // Size variations
     &.btn-lg,
     .btn-group-lg & {
         font-size: $font-size-large;

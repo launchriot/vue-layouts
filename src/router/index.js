@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import LogIn from '@/components/LogIn/index'
 import Dashboard from '@/components/Dashboard/index'
 import Projects from '@/components/Projects/index'
+import WebProjects from '@/components/Projects/web'
+import MobileProjects from '@/components/Projects/mobile'
 import Reports from '@/components/Reports/index'
 import Team from '@/components/Team/index'
 import Admin from '@/components/Admin/index'
@@ -33,7 +35,19 @@ export default new Router({
       path: '/projects',
       name: 'Projects',
       component: Projects,
-      meta: {appLayout: true}
+      meta: {appLayout: true},
+      children: [
+        {
+          path: 'web',
+          name: 'Web Projects',
+          component: WebProjects
+        },
+        {
+          path: 'mobile',
+          name: 'Mobile Projects',
+          component: MobileProjects
+        }
+      ]
     },
     {
       path: '/reports',
