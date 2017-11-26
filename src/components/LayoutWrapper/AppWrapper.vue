@@ -12,23 +12,7 @@
 
 <script>
 export default {
-  name: 'AppWrapper',
-  created () {
-    this.$router.options.routes.forEach(route => {
-      if (route.meta.appLayout) {
-        this.items.push({
-          name: route.name,
-          path: route.path,
-          children: route.children
-        })
-      }
-    })
-  },
-  data () {
-    return {
-      items: []
-    }
-  }
+  name: 'AppWrapper'
 }
 </script>
 
