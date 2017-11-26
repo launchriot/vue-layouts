@@ -34,10 +34,9 @@ export default {
   },
   methods: {
     matched (item) {
-      console.log('matched')
-      console.log('matched path: ' + this.$route.path)
-      console.log('matched item: ' + item.path)
-      return item.children && (this.$route.path === item.path)
+      var path = this.$route.path
+      var parent = this.$route.meta.parent
+      return item.children && (path === item.path || path.includes(parent))
     }
   }
 }

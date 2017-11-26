@@ -1,6 +1,7 @@
 <template>
   <div class="projects-wrapper">
-    <h3>Projects</h3>
+    <h3 v-if="$route.path === '/projects'">Projects</h3>
+    <router-view></router-view>
   </div>
 </template>
 

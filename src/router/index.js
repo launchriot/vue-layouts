@@ -41,13 +41,14 @@ export default new Router({
           path: '/projects/web',
           name: 'Web Projects',
           component: WebProjects,
-          meta: {appLayout: true}
+          meta: {appLayout: true, parent: '/projects'}
         },
         {
           path: '/projects/mobile',
           name: 'Mobile Projects',
           component: MobileProjects,
-          meta: {appLayout: true}
+          parent: '/projects',
+          meta: {appLayout: true, parent: '/projects'}
         }
       ]
     },
