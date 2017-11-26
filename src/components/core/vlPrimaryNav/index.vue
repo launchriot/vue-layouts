@@ -9,9 +9,6 @@
         </li>
       </ul>
     </div>
-    <div v-for="item in items" v-if="matched(item)" class="secondary-wrapper">
-      <vl-secondary-nav :items="item.secondary"></vl-secondary-nav>
-    </div>
   </div>
 </template>
 
@@ -32,15 +29,6 @@ export default {
   methods: {
     toggleMenu () {
       this.menuClosed = !this.menuClosed
-    },
-    matched (item) {
-      console.log('this: ' + this.$route.path)
-      console.log('item: ' + item.path)
-      console.log('************************')
-      if (this.$route.path.indexOf(item.path)) {
-        console.log('bazooka')
-      }
-      return item.secondary && this.$route.path
     }
   }
 }
@@ -197,11 +185,6 @@ ul.primary-nav-menu {
       }
     }
   }
-
-}
-
-.secondary-wrapper {
-  position:relative;
 
 }
 

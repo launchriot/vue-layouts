@@ -2,7 +2,9 @@
   <div class="app-layout-wrapper">
     <vl-meta-nav></vl-meta-nav>
     <vl-primary-nav :items="items"></vl-primary-nav>
-    <vl-secondary-nav :items="items"></vl-secondary-nav>
+    <div v-for="item in items" v-if="matched(item)" class="secondary-wrapper">
+      <vl-secondary-nav :item="item"></vl-secondary-nav>
+    </div>
     <div class="row app-main-body-wrapper">
       <div class="app-main-body col-md-12">
         <slot></slot>
@@ -20,7 +22,7 @@ export default {
         this.items.push({
           name: route.name,
           path: route.path,
-          secondary: route.children
+          children: route.children
         })
       }
     })
@@ -28,6 +30,14 @@ export default {
   data () {
     return {
       items: []
+    }
+  },
+  methods: {
+    matched (item) {
+      console.log('matched')
+      console.log('matched path: ' + this.$route.path)
+      console.log('matched item: ' + item.path)
+      return item.children && (this.$route.path === item.path)
     }
   }
 }
@@ -54,6 +64,11 @@ body {
 .app-main-body {
   background:$brand-white;
   padding:1em;
+}
+
+.secondary-wrapper {
+  position:relative;
+
 }
 
 </style>

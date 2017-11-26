@@ -2,8 +2,11 @@
   <div class="vl-secondary-nav-wrapper">
     <div class="vl-secondary-nav">
       <ul class="secondary-nav-menu">
-        <li v-for="item in items" class="secondary-nav-item-wrapper">
+        <li class="secondary-nav-item-wrapper">
           <router-link tag="span" :to="item.path" class="secondary-nav-item" active-class="active">{{item.name}}</router-link>
+        </li>
+        <li v-for="child in item.children" class="secondary-nav-item-wrapper">
+          <router-link tag="span" :to="child.path" class="secondary-nav-item" active-class="active">{{child.name}}</router-link>
         </li>
       </ul>
     </div>
@@ -14,12 +17,17 @@
 export default {
   name: 'vl-secondary-nav',
   props: {
-    items: Array
+    item: Object
   },
   data () {
     return {
       active: 'active'
     }
+  },
+  created () {
+    console.log('created')
+    console.log('path: ' + this.$route.path)
+    console.log('item: ' + this.item.path)
   }
 }
 </script>
