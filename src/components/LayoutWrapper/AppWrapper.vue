@@ -1,10 +1,7 @@
 <template>
   <div class="app-layout-wrapper">
     <vl-meta-nav></vl-meta-nav>
-    <vl-primary-nav :items="items"></vl-primary-nav>
-    <div v-for="item in items" v-if="matched(item)" class="secondary-wrapper">
-      <vl-secondary-nav :item="item"></vl-secondary-nav>
-    </div>
+    <vl-primary-nav></vl-primary-nav>
     <div class="row app-main-body-wrapper">
       <div class="app-main-body col-md-12">
         <slot></slot>
@@ -31,13 +28,6 @@ export default {
     return {
       items: []
     }
-  },
-  methods: {
-    matched (item) {
-      var path = this.$route.path
-      var parent = this.$route.meta.parent
-      return item.children && (path === item.path || path.includes(parent))
-    }
   }
 }
 </script>
@@ -63,11 +53,6 @@ body {
 .app-main-body {
   background:$brand-white;
   padding:1em;
-}
-
-.secondary-wrapper {
-  position:relative;
-
 }
 
 </style>

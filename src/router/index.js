@@ -8,6 +8,8 @@ import MobileProjects from '@/components/Projects/mobile'
 import Reports from '@/components/Reports/index'
 import Team from '@/components/Team/index'
 import Admin from '@/components/Admin/index'
+import Company from '@/components/Admin/company'
+import Billing from '@/components/Admin/billing'
 
 Vue.use(Router)
 
@@ -41,14 +43,13 @@ export default new Router({
           path: '/projects/web',
           name: 'Web Projects',
           component: WebProjects,
-          meta: {appLayout: true, parent: '/projects'}
+          meta: {appLayout: true, parent: 'projects'}
         },
         {
           path: '/projects/mobile',
           name: 'Mobile Projects',
           component: MobileProjects,
-          parent: '/projects',
-          meta: {appLayout: true, parent: '/projects'}
+          meta: {appLayout: true, parent: 'projects'}
         }
       ]
     },
@@ -68,7 +69,21 @@ export default new Router({
       path: '/admin',
       name: 'Admin',
       component: Admin,
-      meta: {appLayout: true}
+      meta: {appLayout: true},
+      children: [
+        {
+          path: '/admin/company',
+          name: 'Company',
+          component: Company,
+          meta: {appLayout: true, parent: '/admin'}
+        },
+        {
+          path: '/admin/billing',
+          name: 'Billing',
+          component: Billing,
+          meta: {appLayout: true, parent: '/admin'}
+        }
+      ]
     }
   ]
 })

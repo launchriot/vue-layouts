@@ -4,8 +4,19 @@
         <Logo />
       <span class="vl-primary-nav-toggle" v-on:click='toggleMenu'><i class="fa fa-bars"></i></span>
       <ul class="primary-nav-menu" v-bind:class="[menuClosed ? hideMenu : !menuClosed, showMenu]">
-        <li v-for="item in items" class="primary-nav-item-wrapper">
-          <router-link tag="span" :to="item.path" class="primary-nav-item" active-class="active">{{item.name}}</router-link>
+        <li v-for="(item, index) in items" :key="index" class="primary-nav-item-wrapper">
+          <router-link tag="span" class="primary-nav-item" :to="{ name: item.name }" active-class="active">
+            {{ item.name }}
+          </router-link>
+        </li>
+      </ul>
+    </div>
+    <div class="vl-secondary-nav" v-if="subNav">
+      <ul class="secondary-nav-menu">
+        <li v-for="(item, index) in subNav" :key="index" class="secondary-nav-item-wrapper" >
+          <router-link tag="span" class="secondary-nav-item" :to="{ name: item.name }" active-class="active">
+            {{ item.name }}
+          </router-link>
         </li>
       </ul>
     </div>
@@ -15,20 +26,39 @@
 <script>
 export default {
   name: 'vl-primary-nav',
-  props: {
-    items: Array
-  },
   data () {
     return {
       menuClosed: false,
       showMenu: 'nav-menu-show',
       hideMenu: 'nav-menu-hide',
-      active: 'active'
+      active: 'active',
+      items: [],
+      activeParentLink: {}
     }
   },
   methods: {
     toggleMenu () {
       this.menuClosed = !this.menuClosed
+    }
+  },
+  created () {
+    this.$router.options.routes.forEach(route => {
+      if (route.meta.appLayout) {
+        this.items.push({
+          name: route.name,
+          path: route.path
+        })
+      }
+    })
+  },
+  computed: {
+    subNav () {
+      const found = this.$router.options.routes.find((route) => {
+        return route.name === this.$route.matched[0].name
+      })
+      if (found) {
+        return found.children
+      }
     }
   }
 }
@@ -182,6 +212,44 @@ ul.primary-nav-menu {
             cursor:pointer;
           }
         }
+      }
+    }
+  }
+}
+
+.vl-secondary-nav {
+  position:relative;
+  display: block;
+  background: $background-default;
+  padding: .4em 1em .7em 1em; 
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  box-shadow: $box-shadow;
+  line-height:1;
+}
+
+ul.secondary-nav-menu {
+  list-style:none;
+  padding:0;
+  position:relative;
+  display: inline-block;
+  margin-bottom: 0em;
+
+  li.secondary-nav-item-wrapper {
+    display: inline-block;
+
+    span.secondary-nav-item {
+      display: block;
+      margin: 0em .1em;
+      padding-right: 2em;
+      color: lighten($brand-black, 30%);
+      transition: all .3s ease-out;
+      font-size: $font-size-small;
+      line-height:1;
+      &:hover, &.active  {
+        color: $brand-black;
+        cursor:pointer;
       }
     }
   }
