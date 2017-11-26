@@ -1,7 +1,7 @@
 {
-  "name": "diego",
+  "name": "vue-layouts",
   "version": "1.0.0",
-  "description": "A demo project using Dawn UI",
+  "description": "A demo project using different layouts for different routes",
   "author": "Avi <launchriot@gmail.com>",
   "private": true,
   "scripts": {
