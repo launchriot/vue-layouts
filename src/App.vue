@@ -16,6 +16,7 @@ export default {
   },
   watch: {
     '$route' (to, from) {
+      // In real life, a theme param would probably be per user, not per route
       var theme = this.$route.meta.theme
       document.body.className = theme
     }
