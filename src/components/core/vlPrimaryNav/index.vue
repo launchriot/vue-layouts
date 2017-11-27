@@ -127,7 +127,7 @@ ul.primary-nav-menu {
       border-radius: 3px 3px 0px 0px;
       transition: all .3s ease-out;
       @include themify() {
-        background:  getThemifyVariable('primary-04');
+        background:  getThemifyVariable('primary-02');
         color: getThemifyVariable('canvas');
       }
       &:hover, &.active  {
@@ -225,12 +225,11 @@ ul.primary-nav-menu {
         span.primary-nav-item {
           display: block;
           margin: .5em;
-          background: none;
           padding: .8em 1.5em;
           border-radius: $border-radius;
           transition: all .3s ease-out;
           @include themify() {
-            color:  getThemifyVariable('primary-04');
+            color:  getThemifyVariable('canvas');
           }
           &:hover, .active {
             @include themify() {

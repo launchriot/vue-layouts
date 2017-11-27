@@ -19,37 +19,37 @@ export default new Router({
       path: '/',
       name: 'Log In',
       component: LogIn,
-      meta: {authLayout: true}
+      meta: {authLayout: true, theme: 'default'}
     },
     {
       path: '/login',
       name: 'Log In',
       component: LogIn,
-      meta: {authLayout: true}
+      meta: {authLayout: true, theme: 'default'}
     },
     {
       path: '/dashboard',
       name: 'Dashboard',
       component: Dashboard,
-      meta: {appLayout: true}
+      meta: {appLayout: true, theme: 'default'}
     },
     {
       path: '/projects',
       name: 'Projects',
       component: Projects,
-      meta: {appLayout: true},
+      meta: {appLayout: true, theme: 'default'},
       children: [
         {
           path: '/projects/web',
           name: 'Web Projects',
           component: WebProjects,
-          meta: {appLayout: true, parent: 'projects'}
+          meta: {appLayout: true, theme: 'default', parent: 'projects'}
         },
         {
           path: '/projects/mobile',
           name: 'Mobile Projects',
           component: MobileProjects,
-          meta: {appLayout: true, parent: 'projects'}
+          meta: {appLayout: true, theme: 'default', parent: 'projects'}
         }
       ]
     },
@@ -57,31 +57,31 @@ export default new Router({
       path: '/reports',
       name: 'Reports',
       component: Reports,
-      meta: {appLayout: true}
+      meta: {appLayout: true, theme: 'default'}
     },
     {
       path: '/team',
       name: 'Team',
       component: Team,
-      meta: {appLayout: true}
+      meta: {appLayout: true, theme: 'default'}
     },
     {
       path: '/admin',
       name: 'Admin',
       component: Admin,
-      meta: {appLayout: true},
+      meta: {appLayout: true, theme: 'apple'},
       children: [
         {
           path: '/admin/company',
           name: 'Company',
           component: Company,
-          meta: {appLayout: true, parent: '/admin'}
+          meta: {appLayout: true, theme: 'apple', parent: '/admin'}
         },
         {
           path: '/admin/billing',
           name: 'Billing',
           component: Billing,
-          meta: {appLayout: true, parent: '/admin'}
+          meta: {appLayout: true, theme: 'apple', parent: '/admin'}
         }
       ]
     }

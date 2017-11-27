@@ -13,6 +13,12 @@ export default {
   name: 'app',
   components: {
     'layout': LayoutWrapper
+  },
+  watch: {
+    '$route' (to, from) {
+      var theme = this.$route.meta.theme
+      document.body.className = theme
+    }
   }
 }
 </script>

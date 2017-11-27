@@ -3,6 +3,8 @@
    ========================================================= */
 @import 'themes/_default';
 
+// Might want to create variables like 'button-primary-color'
+
 $themes: (
   default: (
     primary-01:        #48316b,
@@ -38,11 +40,11 @@ $themes: (
     background-light:  #ececec
   ),
   apple: (
-    primary-01:        #48316b,
-    primary-02:        #61407a,
-    primary-03:        #a885bc,
-    primary-04:        #51226c,
-    primary-05:        #481e60,
+    primary-01:        #0088CC,
+    primary-02:        #0088CC,
+    primary-03:        #0088CC,
+    primary-04:        #0088CC,
+    primary-05:        #0088CC,
 
     secondary-01:      #60b8d1,
     secondary-02:      #7ec5da,
@@ -65,10 +67,10 @@ $themes: (
 
     canvas:            #ffffff,
     ink:               #333333,
-    ink-light:         #7f7f7f,
-    border:            #989898,
-    background:        #FF0000,
-    background-light:  #ececec
+    ink-light:         #666666,
+    border:            #EEEEEE,
+    background:        #979797,
+    background-light:  #EEEEEE
   )
 );
 
