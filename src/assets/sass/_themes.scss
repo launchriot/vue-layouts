@@ -1,0 +1,127 @@
+/* =========================================================
+   Themes Nov 2017
+   ========================================================= */
+@import 'themes/_default';
+
+$themes: (
+  default: (
+    primary-01:        #48316b,
+    primary-02:        #61407a,
+    primary-03:        #a885bc,
+    primary-04:        #51226c,
+    primary-05:        #481e60,
+
+    secondary-01:      #60b8d1,
+    secondary-02:      #7ec5da,
+    secondary-03:      #cde2e8,
+    secondary-04:      #d6e8ec,
+    //secondary-05:	  (unused)
+
+    tertiary-01:       #a9d85f,
+    tertiary-02:       #b9df7d,
+    //tertiary-03:     (unused)
+    //tertiary-04:     (unused)
+    //tertiary-05:     (unused)
+
+    attention-01:      #ffba15,
+    attention-02:      #ffc740,
+    attention-03:      #ffdf94,
+
+    urgent-01:         #ff666e,
+    urgent-02:         #e02630,
+
+    canvas:            #ffffff,
+    ink:               #333333,
+    ink-light:         #7f7f7f,
+    border:            #989898,
+    background:        #cccccc,
+    background-light:  #ececec
+  ),
+  apple: (
+    primary-01:        #48316b,
+    primary-02:        #61407a,
+    primary-03:        #a885bc,
+    primary-04:        #51226c,
+    primary-05:        #481e60,
+
+    secondary-01:      #60b8d1,
+    secondary-02:      #7ec5da,
+    secondary-03:      #cde2e8,
+    secondary-04:      #d6e8ec,
+    //secondary-05:    (unused)
+
+    tertiary-01:       #a9d85f,
+    tertiary-02:       #b9df7d,
+    //tertiary-03:     (unused)
+    //tertiary-04:     (unused)
+    //tertiary-05:     (unused)
+
+    attention-01:      #ffba15,
+    attention-02:      #ffc740,
+    attention-03:      #ffdf94,
+
+    urgent-01:         #ff666e,
+    urgent-02:         #e02630,
+
+    canvas:            #ffffff,
+    ink:               #333333,
+    ink-light:         #7f7f7f,
+    border:            #989898,
+    background:        #FF0000,
+    background-light:  #ececec
+  )
+);
+
+@function map-fetch($map, $keys) {
+  $key: nth($keys, 1);
+  $length: length($keys);
+  $value: map-get($map, $key);
+  
+  
+  @if $value != null {
+    @if $length > 1 {
+      $rest: ();
+      
+      @for $i from 2 through $length {
+        $rest: append($rest, nth($keys, $i))
+      }
+      
+      @return map-fetch($value, $rest);
+    } @else {
+      @return $value;
+    }
+  } @else {
+    @return false;
+  }
+}
+
+@function getThemifyVariable($key) {
+  @return map-get($theme-map, $key);
+}
+
+@mixin themify ($themes: $themes) {
+  @each $theme, $map in $themes {
+    .#{$theme} & {
+      // Define theme color
+      $theme-map : (
+          primary-01: $primary-01
+      ) !global;
+      
+      @each $key, $submap in $map {
+        $value: map-fetch($themes, $theme '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      
+      @content;
+      
+      // reset theme color to null
+      $theme-map: null !global;
+    }
+  }
+}
+
+/* Import example
+  @include themify() {
+    background:  getThemifyVariable('primary-05');
+  }
+*/

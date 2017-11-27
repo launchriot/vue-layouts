@@ -4,50 +4,17 @@
 
 @import '_breakpoints';
 @import '_mixins';
+@import "_themes";
 
-/* =========================================================
-   Vue Layouts Colors Nov 2017
-   ========================================================= */
-$vl-white:        #FFFFFF !default;
-$vl-black:        #333333 !default;
-$vl-grey:         #7D7D7D !default;
-
-$vl-blue:         rgb(21, 140, 186) !default;
-$vl-green:        rgb(40, 182, 44) !default;
-$vl-blue-light:   rgb(117, 202, 235) !default;
-$vl-orange:       rgb(255, 133, 27) !default;
-$vl-red:          rgb(255, 65, 54) !default;
-
-
-// Set brand colors
-$brand-primary:       $vl-blue !default;
-$brand-secondary:     $vl-grey !default;
-$brand-success:       $vl-green !default;
-$brand-danger:        $vl-red !default;
-$brand-warning:       $vl-orange !default;
-$brand-info:          $vl-blue-light !default;
-$brand-rose:          lighten($vl-red, 20%) !default;
-$brand-white:         $vl-white !default;
-$brand-black:         $vl-black !default;
-$brand-grey:          $vl-grey !default;
-
-$highlight:           lighten($brand-grey, 45%);
 
 // Layout Variables
-$background-default: 	lighten($brand-grey, 45%);
 $border-radius: 		.2em;
 $box-shadow: 			0px 5px 7px 1px rgba(0, 0, 0, 0.1);
 $side-padding: 			1em;
 $border-width-default:	.15em;
-$border-default:		$border-width-default solid lighten($brand-grey, 45%);
+$border-default:		$border-width-default solid;
 
-// Override info button color
-$btn-info-color:    darken($brand-info, 25);
-
-// Override info alert background color
-$state-info-bg:     lighten($brand-info, 45);
-
-// Override fonts
+// Override Fonts
 $font-family-sans-serif:  'Raleway', sans-serif;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;

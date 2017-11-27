@@ -20,12 +20,16 @@ export default {
 @import "~@/assets/sass/_variables.scss";
 
 body {
-  background: $background-default;
+  @include themify() {
+    background:  getThemifyVariable('background');
+  }
   height: 100vh;
 }
 
 .app-layout-wrapper {
-  background: $brand-white;
+  @include themify() {
+    background:  getThemifyVariable('canvas');
+  }
   padding-bottom: 1em;
   height: 100vh;
 }
@@ -35,7 +39,9 @@ body {
 }
 
 .app-main-body {
-  background:$brand-white;
+  @include themify() {
+    background:  getThemifyVariable('canvas');
+  }
   padding:1em;
 }
 

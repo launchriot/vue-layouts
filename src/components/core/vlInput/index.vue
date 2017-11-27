@@ -87,7 +87,6 @@
 </script>
 
 <style scoped lang="scss">
-@import "~@/assets/sass/_variables.scss";
 @import "~@/assets/sass/_form_fields.scss";  
 
 .form-group {
@@ -101,7 +100,9 @@
 }
 
 .toggle-password-icon {
-  color: $brand-grey;
+  @include themify() {
+    color:  getThemifyVariable('background');
+  }
   display: inline-block;
   height: 100%;
   position: absolute;
@@ -113,7 +114,9 @@
 
   &:hover {
     cursor: pointer;
-    color: $brand-primary;
+    @include themify() {
+      color:  getThemifyVariable('primary-05');
+    }
   }
 }
 

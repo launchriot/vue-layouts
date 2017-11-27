@@ -46,36 +46,54 @@ button, html [type="button"], [type="reset"], [type="submit"] {
 
     &,
     &.btn-default{
-      @include btn-styles($brand-secondary);
+      @include themify() {
+        @include btn-styles(getThemifyVariable('ink-light')); 
+      }
     }
 
     &.btn-primary{
-      @include btn-styles($brand-primary);
+      @include themify() {
+        @include btn-styles(getThemifyVariable('primary-05')); 
+      }
     }
     &.btn-secondary {
-      @include btn-styles($brand-secondary);
+      @include themify() {
+        @include btn-styles(getThemifyVariable('ink-light')); 
+      }
     }
     &.btn-info{
-      @include btn-styles($brand-info);
+      @include themify() {
+        @include btn-styles(getThemifyVariable('secondary-01')); 
+      }
     }
     &.btn-success{
-      @include btn-styles($brand-success);
+      @include themify() {
+        @include btn-styles(getThemifyVariable('tertiary-01')); 
+      }
     }
     &.btn-warning{
-      @include btn-styles($brand-warning);
+      @include themify() {
+        @include btn-styles(getThemifyVariable('urgent-01')); 
+      }
     }
     &.btn-danger{
-      @include btn-styles($brand-danger);
+      @include themify() {
+        @include btn-styles(getThemifyVariable('urgent-01')); 
+      }
     }
     &.btn-white{
         &,
         &:focus,
         &:hover{
-            background-color: $brand-white;
-            color: lighten($brand-grey, 30%);
+          @include themify() {
+            color:  getThemifyVariable('ink-light');
+            background-color: getThemifyVariable('canvas');
+          }
         }
         &.btn-simple{
-            color: $brand-white;
+            @include themify() {
+              color:  getThemifyVariable('canvas');
+            }
             background: transparent;
             box-shadow: none;
         }
@@ -112,8 +130,10 @@ button, html [type="button"], [type="reset"], [type="submit"] {
     }
 
     &.btn-actionbar {
-        background: $brand-white;
-        color: $brand-black;
+        @include themify() {
+          color:  getThemifyVariable('ink');
+          background:  getThemifyVariable('canvas');
+        }
         font-weight: 600;
         border:$border-default;
         padding: 4px 12px;

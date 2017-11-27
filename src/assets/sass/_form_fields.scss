@@ -1,59 +1,65 @@
-@import '_variables';
-
+@import "_variables";
+@import "/themes/_default";
 // Form Field Labels
 
 label {
-	font-weight: $font-weight-bold;
-	font-size: $font-size-small;
-	margin-bottom: 0.3em
+  font-weight: $font-weight-bold;
+  font-size: $font-size-small;
+  margin-bottom: 0.3em
 }
 
 @mixin form-field() {
-	border: $border-default;
-	background-image: linear-gradient(darken($brand-white,2%), $brand-white);
-	background-size:100%;
-	background-repeat: no-repeat;
-	background-position: center bottom, center calc(100% - 1px);
-	background-color: rgba(0, 0, 0, 0);
-	transition: background 0s ease-out;
-	float: none;
-	box-shadow: none;
-	border-radius: 0;
-	font-weight: 400;
-	font-size:$font-size-small;
-	color: $brand-black;
-	&:focus{
-		border:$border-width-default solid $brand-success;
-		box-shadow: 0px 0px 0px 1px $brand-success;
-	}
-	&:hover{
-		background-color: $brand-white;
-		color: $brand-black;
-	}
+  border: $border-default;
+  @include themify() {
+    background-image: linear-gradient(darken(getThemifyVariable('canvas'),2%), 
+      getThemifyVariable('canvas'));
+    border-color: getThemifyVariable('border');
+  }
+  background-size:100%;
+  background-repeat: no-repeat;
+  background-position: center bottom, center calc(100% - 1px);
+  background-color: rgba(0, 0, 0, 0);
+  transition: background 0s ease-out;
+  float: none;
+  box-shadow: none;
+  border-radius: 0;
+  font-weight: 400;
+  font-size:$font-size-small;
+  @include themify() {
+   color: getThemifyVariable('ink');
+  }
+ &:focus{
+  border:$border-width-default solid $tertiary-01;
+  box-shadow: 0px 0px 0px 1px $tertiary-01;
+}
+&:hover{
+  background-color: $canvas;
+  color: $ink;
+}
 
-	&[readonly],
-	&[disabled],
-	fieldset[disabled] & {
-		background-color: darken($brand-white,2%);
-		color:$brand-grey;
-	}
+&[readonly],
+&[disabled],
+fieldset[disabled] & {
+  background-color: darken($canvas,2%);
+  color:$background;
+}
 
-	@include placeholder {
-    	color: lighten($brand-black,50%);
-	}
+@include placeholder {
+  color: $background;
+}
 
-	&[disabled],
-	fieldset[disabled] & {
-		background-image: none;
-	}
+&[disabled],
+fieldset[disabled] & {
+  background-image: none;
+}
 
-	&[error],
-	&[error]:focus,
-	fieldset[error] & {
-		background-image: none;
-		border: $border-width-default solid $brand-danger;
-		color: $brand-danger;
-		box-shadow: 0px 0px 0px 1px $brand-danger;
-		background-color: $brand-white;
-	}
+&[error],
+&[error]:focus,
+fieldset[error] & {
+  background-image: none;
+  border: $border-width-default solid $urgent-01;
+  color: $urgent-01;
+  box-shadow: 0px 0px 0px 1px $urgent-01;
+  background-color: $canvas;
+}
 }

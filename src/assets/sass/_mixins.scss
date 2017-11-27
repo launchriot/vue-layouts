@@ -28,7 +28,9 @@
     .open > &.dropdown-toggle:focus,
     .open > &.dropdown-toggle:hover {
       background-color: $btn-color;
-      color: $brand-white;
+      @include themify() {
+        color: getThemifyVariable('canvas');
+      }
     }
 
     &:focus,

@@ -17,7 +17,9 @@ export default {
 .logo {
   width:13em;
   display:block;
-  color: $brand-white;
+  @include themify() {
+    color:  getThemifyVariable('canvas');
+  }
 
   img {
     width:20%;

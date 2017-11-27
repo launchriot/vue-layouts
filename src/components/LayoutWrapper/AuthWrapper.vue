@@ -22,12 +22,16 @@ export default {
 @import "~@/assets/sass/_variables.scss";
 
 body {
-  background: $brand-white;
+  @include themify() {
+    background-color: getThemifyVariable('canvas');
+  }
   height: 100vh;
 }
 
 .auth-layout-wrapper {
-  background: $background-default;
+  @include themify() {
+    background: getThemifyVariable('background');
+  }
   padding-bottom: 1em;
   height: 100vh;
 }
@@ -35,18 +39,24 @@ body {
 .auth-header {
   width: 100%;
   height:.85em;
-  background: $brand-primary;
+  @include themify() {
+    background: getThemifyVariable('primary-05');
+  }
   padding: 0em $side-padding;
 }
 
 .auth-top {
   width: 100%;
-  background: lighten($brand-primary, 30%);
+  @include themify() {
+    background: getThemifyVariable('primary-04');
+  }
   padding: 1em $side-padding;
 }
 
 .auth-main-body {
-  background:$brand-white;
+  @include themify() {
+    background: getThemifyVariable('canvas');
+  }
   padding:1em;
   border-radius: $border-radius;
   margin: -2em auto;

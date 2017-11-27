@@ -48,10 +48,12 @@ export default {
 .vl-meta-nav {
   display: block;
   width: 100%;
-  background: $brand-primary;
   padding:.3em $side-padding;
   text-align: right;
   font-size: $font-size-small;
+  @include themify() {
+    background: getThemifyVariable('primary-05');
+  }
 }
 
 ul.meta-nav-menu {
@@ -67,7 +69,9 @@ ul.meta-nav-menu {
     margin:0em .5em;
 
     a {
-      color: $brand-white;
+      @include themify() {
+        color: getThemifyVariable('canvas');
+      }
       opacity:0.3;
       transition: opacity .5s ease-out;
       &:hover {
@@ -86,7 +90,9 @@ ul.meta-nav-menu {
     position:absolute;
     top: -.15em;
     left: 1em;
-    background:$brand-white;
+    @include themify() {
+      background: getThemifyVariable('canvas');
+    }
     box-shadow: $box-shadow;
     padding:0em 1em 1em 1em;
     width:100%;
@@ -99,11 +105,15 @@ ul.meta-nav-menu {
       li.meta-nav-dropdown-title {
         font-weight: $font-weight-bold;
         margin-bottom:.3em;
-        color: $brand-primary;
+        @include themify() {
+          color: getThemifyVariable('primary-05');
+        }
 
         span.close-icon {
           font-weight: 100;
-          color: $brand-black;
+          @include themify() {
+            color: getThemifyVariable('primary-05');
+          }
           margin-left: 2em;
           &:hover {
             cursor: pointer;
@@ -116,14 +126,18 @@ ul.meta-nav-menu {
         padding:.3em 0em;
         a {
           padding: .5em;
-          color: $brand-primary;
+          @include themify() {
+            color: getThemifyVariable('primary-05');
+          }
           opacity:1;
           font-size: $font-size-xsmall;
           line-height: 1em;
         }
 
         &:hover {
-          background:$highlight;
+          @include themify() {
+            background: getThemifyVariable('background-light');
+          }
           transition: all .5s ease-out;
         }
 
