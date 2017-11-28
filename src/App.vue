@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="main-wrapper">
+  <div id="app" class="main-wrapper" :class="$route.meta.theme">
     <div class="container-fluid">
       <layout />
     </div>
@@ -13,13 +13,6 @@ export default {
   name: 'app',
   components: {
     'layout': LayoutWrapper
-  },
-  watch: {
-    '$route' (to, from) {
-      // In real life, a theme param would probably be per user, not per route
-      var theme = this.$route.meta.theme
-      document.body.className = theme
-    }
   }
 }
 </script>

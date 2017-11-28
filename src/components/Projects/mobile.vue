@@ -1,6 +1,5 @@
 <template>
   <div class="projects-wrapper">
-    <h3>Mobile Projects</h3>
   </div>
 </template>
 

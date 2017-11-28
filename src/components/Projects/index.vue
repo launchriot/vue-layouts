@@ -1,7 +1,7 @@
 <template>
   <div class="projects-wrapper">
-    <h3 v-if="$route.path === '/projects'">Projects</h3>
-    <router-view></router-view>
+  	<vl-title-nav :title="$route.name"></vl-title-nav>
+    <router-view v-if="$route.path !== '/projects'"/>
   </div>
 </template>
 
