@@ -6,7 +6,7 @@
     </div>
     <div v-if="hasAction" class="action-area text-right">
       <router-link v-if="$routerHistory.hasHistory()" :to="{ path: $routerHistory.previous().path }">
-        <i class="fa fa-left-arrow"></i> Back
+        <i class="fa fa-long-arrow-left"></i> Back
       </router-link>
     </div>
   </div>
