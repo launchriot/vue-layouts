@@ -6,6 +6,7 @@ import Dashboard from '@/components/Dashboard/index'
 import Projects from '@/components/Projects/index'
 import WebProjects from '@/components/Projects/web'
 import MobileProjects from '@/components/Projects/mobile'
+import NewProject from '@/components/Projects/new'
 import Reports from '@/components/Reports/index'
 import Team from '@/components/Team/index'
 import Admin from '@/components/Admin/index'
@@ -52,6 +53,12 @@ const router = new Router({
           name: 'Mobile Projects',
           component: MobileProjects,
           meta: {appLayout: true, theme: 'default', parent: 'projects'}
+        },
+        {
+          path: 'new',
+          name: 'New Project',
+          component: NewProject,
+          meta: {authLayout: true, theme: 'default', parent: 'projects'}
         }
       ]
     },

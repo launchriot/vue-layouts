@@ -1,14 +1,11 @@
 <template>
   <div class="projects-wrapper">
-  	<vl-title-nav :title="$route.name"></vl-title-nav>
-  	<vl-button href="#/projects/new">New Project</vl-button>
-    <router-view v-if="$route.path !== '/projects'"/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Projects'
+  name: 'NewProjects'
 }
 </script>
 

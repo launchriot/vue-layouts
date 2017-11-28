@@ -25,5 +25,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## Features Include
 
 > Define layout per route
+
 > Sub-navigation
+
 > Define different color themes
