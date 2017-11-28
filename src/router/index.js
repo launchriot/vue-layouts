@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import { routerHistory, writeHistory } from 'vue-router-back-button'
 import LogIn from '@/components/LogIn/index'
 import Dashboard from '@/components/Dashboard/index'
 import Projects from '@/components/Projects/index'
@@ -12,8 +13,9 @@ import Company from '@/components/Admin/company'
 import Billing from '@/components/Admin/billing'
 
 Vue.use(Router)
+Vue.use(routerHistory)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -87,3 +89,7 @@ export default new Router({
     }
   ]
 })
+
+router.afterEach(writeHistory)
+
+export default router

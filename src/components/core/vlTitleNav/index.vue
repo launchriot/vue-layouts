@@ -5,7 +5,9 @@
       <p v-if="subtitle" class="page-subtitle">{{subtitle}}</p>
     </div>
     <div v-if="hasAction" class="action-area text-right">
-      <slot name="action"></slot>
+      <router-link v-if="$routerHistory.hasHistory()" :to="{ path: $routerHistory.previous().path }">
+        <i class="fa fa-left-arrow"></i> Back
+      </router-link>
     </div>
   </div>
 </template>
@@ -15,22 +17,8 @@ export default {
   name: 'vl-title-nav',
   props: {
     title: String,
-    subtitle: String
-  },
-  data () {
-    return {
-      backButton: false
-    }
-  },
-  methods: {
-    navigateBack () {
-      // function to go back a page
-    }
-  },
-  computed: {
-    hasAction () {
-      return this.$slots.action
-    }
+    subtitle: String,
+    hasAction: Boolean
   }
 }
 </script>
