@@ -58,7 +58,7 @@ const router = new Router({
           path: 'new',
           name: 'New Project',
           component: NewProject,
-          meta: {authLayout: true, theme: 'default', parent: 'projects'}
+          meta: {focusLayout: true, theme: 'default', parent: 'projects'}
         }
       ]
     },
