@@ -11,6 +11,7 @@ import TabNav from './core/vlTabNav'
 import Tab from './core/vlTabNav/vlTab'
 import Input from './core/vlInput'
 import Button from './core/vlButton'
+import Section from './core/vlSection'
 
 export default {
   install (Vue) {
@@ -24,5 +25,6 @@ export default {
     Vue.component(Tab.name, Tab)
     Vue.component(Input.name, Input)
     Vue.component(Button.name, Button)
+    Vue.component(Section.name, Section)
   }
 }
