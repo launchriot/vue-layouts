@@ -2,8 +2,13 @@
   <div class="vl-tab-nav-wrapper">
     <div class="vl-tab-nav">
       <ul>
-        <li v-for="tab in tabs" :class="{ 'is-active': tab.isActive }">
-          <a :href="tab.href" @click="selectTab(tab)">{{tab.title}}</a>
+        <li v-for="tab in tabs" :class="{ 'is-active': tab.isActive }" @click="selectTab(tab)">
+          <span v-if="tab.icon" class="tab-icon-wrapper">
+            <i :class="tab.iconClass"></i>
+          </span>
+          <span class="tab-title-wrapper">
+            <a :href="tab.href">{{tab.title}}</a>
+          </span>
         </li>
       </ul>
     </div>
@@ -47,6 +52,23 @@ export default {
   margin-right: -15px;
 }
 
+.uniform {
+  li {
+    width: 7em;
+    text-align: center;
+    height: 8em;
+    vertical-align: top;
+
+    .tab-title-wrapper {
+      display: block;
+      position: absolute;
+      bottom: .1em;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
 .vl-tab-nav {
   border-bottom: $border;
   @include themify() {
@@ -58,9 +80,13 @@ export default {
     list-style: none;
     padding-left: .75em;
     padding-right: .75em;
-    margin-bottom:0;
+    margin-bottom:1em;
+    width:100%;
+    padding-bottom:.15em;
+    border-bottom: $border-width-default solid $background-light;
 
     li {
+      position:relative;
       display: inline-block;
       margin:.5em 2.5em 0em 0em;
       padding-bottom:.3em;
@@ -70,6 +96,16 @@ export default {
         border-color: getThemifyVariable('border');
       }
       transition: all .2s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+        .tab-icon-wrapper {
+          display: block;
+          font-size: 3em;
+          text-align: center;
+        }
 
         a {
           @include themify() {

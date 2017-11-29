@@ -5,7 +5,7 @@
       <span class="vl-primary-nav-toggle" v-on:click='toggleMenu'><i class="fa fa-bars"></i></span>
       <ul class="primary-nav-menu" v-bind:class="[menuClosed ? hideMenu : !menuClosed, showMenu]">
         <li v-for="(item, index) in items" :key="index" class="primary-nav-item-wrapper">
-          <router-link tag="span" class="primary-nav-item" :to="{ name: item.name }" active-class="active">
+          <router-link tag="span" class="primary-nav-item" :to="{ path: item.path }" active-class="active">
             {{ item.name }}
           </router-link>
         </li>
@@ -14,7 +14,7 @@
     <div class="vl-secondary-nav" v-if="subNav">
       <ul class="secondary-nav-menu">
         <li v-for="(item, index) in subNav" :key="index" class="secondary-nav-item-wrapper" >
-          <router-link tag="span" class="secondary-nav-item" :to="{ name: item.name }" active-class="active">
+          <router-link tag="span" class="secondary-nav-item" :to="{ path: item.path }" active-class="active">
             {{ item.name }}
           </router-link>
         </li>

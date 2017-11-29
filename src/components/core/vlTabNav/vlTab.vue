@@ -15,7 +15,8 @@ export default {
     active: {
       type: Boolean,
       default: false
-    }
+    },
+    icon: String
   },
   data () {
     return {
@@ -25,6 +26,9 @@ export default {
   computed: {
     href () {
       return '/#' + this.title.toLowerCase().replace(/ /g, '-')
+    },
+    iconClass () {
+      return 'fa fa-' + this.icon
     }
   },
   mounted () {
