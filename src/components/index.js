@@ -12,6 +12,8 @@ import Tab from './core/vlTabNav/vlTab'
 import Input from './core/vlInput'
 import Button from './core/vlButton'
 import Section from './core/vlSection'
+import Form from './core/vlForm'
+import Textarea from './core/vlTextarea'
 
 export default {
   install (Vue) {
@@ -26,5 +28,7 @@ export default {
     Vue.component(Input.name, Input)
     Vue.component(Button.name, Button)
     Vue.component(Section.name, Section)
+    Vue.component(Form.name, Form)
+    Vue.component(Textarea.name, Textarea)
   }
 }

@@ -12,7 +12,7 @@ label {
   @include themify() {
     background-image: linear-gradient(darken(getThemifyVariable('canvas'),2%), 
       getThemifyVariable('canvas'));
-    border-color: getThemifyVariable('border');
+    border-color: getThemifyVariable('background');
   }
   background-size:100%;
   background-repeat: no-repeat;
