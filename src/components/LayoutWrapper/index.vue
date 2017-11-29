@@ -5,10 +5,10 @@
         <router-view/>
       </auth-wrapper>
     </div>
-    <div v-if="$route.meta.focusLayout">
-      <focus-wrapper>
+    <div v-if="$route.meta.navlessLayout">
+      <navless-wrapper>
         <router-view/>
-      </focus-wrapper>
+      </navless-wrapper>
     </div>
     <div v-else>
       <app-wrapper>
@@ -21,14 +21,14 @@
 <script>
 import AuthWrapper from '@/components/LayoutWrapper/AuthWrapper'
 import AppWrapper from '@/components/LayoutWrapper/AppWrapper'
-import FocusWrapper from '@/components/LayoutWrapper/FocusWrapper'
+import NavlessWrapper from '@/components/LayoutWrapper/NavlessWrapper'
 
 export default {
   name: 'LayoutWrapper',
   components: {
     'auth-wrapper': AuthWrapper,
     'app-wrapper': AppWrapper,
-    'focus-wrapper': FocusWrapper
+    'navless-wrapper': NavlessWrapper
   }
 }
 </script>

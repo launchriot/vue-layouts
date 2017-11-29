@@ -1,5 +1,6 @@
 <template>
   <div class="projects-wrapper">
+  	<vl-title-nav :title="$route.name"></vl-title-nav>
   </div>
 </template>
 

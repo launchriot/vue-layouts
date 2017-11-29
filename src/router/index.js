@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import { routerHistory, writeHistory } from 'vue-router-back-button'
 import LogIn from '@/components/LogIn/index'
 import Dashboard from '@/components/Dashboard/index'
-import Projects from '@/components/Projects/index'
+import ProjectsIndex from '@/components/Projects/index'
+import Projects from '@/components/Projects/projects'
 import WebProjects from '@/components/Projects/web'
 import MobileProjects from '@/components/Projects/mobile'
 import NewProject from '@/components/Projects/new'
@@ -39,9 +40,16 @@ const router = new Router({
     {
       path: '/projects',
       name: 'Projects',
-      component: Projects,
+      component: ProjectsIndex,
+      redirect: {name: 'Projects'},
       meta: {appLayout: true, theme: 'default'},
       children: [
+        {
+          path: 'all',
+          name: 'Projects',
+          component: Projects,
+          meta: {appLayout: true, theme: 'default', parent: 'projects'}
+        },
         {
           path: 'web',
           name: 'Web Projects',
@@ -58,7 +66,7 @@ const router = new Router({
           path: 'new',
           name: 'New Project',
           component: NewProject,
-          meta: {focusLayout: true, theme: 'default', parent: 'projects'}
+          meta: {navlessLayout: true, theme: 'default', parent: 'projects'}
         }
       ]
     },

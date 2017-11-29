@@ -1,16 +1,16 @@
 <template>
-  <div class="focus-layout-wrapper">
-    <div class="focus-layout-header">
+  <div class="navless-layout-wrapper">
+    <div class="navless-layout-header">
       <Logo/>
-      <span class="focus-page-name">{{$route.name}}</span>
-      <span class="focus-page-close">
+      <span class="navless-page-name">{{$route.name}}</span>
+      <span class="navless-page-close">
         <router-link v-if="$routerHistory.hasHistory()" :to="{ path: $routerHistory.previous().path }">
           Close <i class="fa fa-times-circle-o"></i>
         </router-link>
       </span>
     </div>
-    <div class="row focus-main-body-wrapper">
-      <div class="focus-main-body col-md-12">
+    <div class="row navless-main-body-wrapper">
+      <div class="navless-main-body col-md-12">
         <slot></slot>
       </div>
     </div>
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: 'FocusWrapper'
+  name: 'NavlessWrapper'
 }
 </script>
 
@@ -34,7 +34,7 @@ body {
 }
 
 
-.focus-layout-wrapper {
+.navless-layout-wrapper {
   @include themify() {
     background:  getThemifyVariable('canvas');
   }
@@ -46,10 +46,10 @@ body {
     width:10em;
   }
   
-  .focus-layout-header {
+  .navless-layout-header {
     padding: $side-padding;
 
-    .focus-page-name {
+    .navless-page-name {
       display: inline-block;
       font-size: $font-size-large;
     }
@@ -59,7 +59,7 @@ body {
       color: getThemifyVariable('canvas');
     }
 
-    .focus-page-close{
+    .navless-page-close{
       text-align: right;
       float: right;
 
@@ -80,11 +80,11 @@ body {
 
 }
 
-.focus-main-body-wrapper {
+.navless-main-body-wrapper {
   margin:0;
 }
 
-.focus-main-body {
+.navless-main-body {
   @include themify() {
     background:  getThemifyVariable('canvas');
   }
