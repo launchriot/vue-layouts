@@ -340,9 +340,10 @@ fieldset[disabled] .vlSelect {
   outline: none;
   border:$border-width-default solid;
   @include themify() {
-    color: getThemifyVariable('tertiary-01');
+    border-color: getThemifyVariable('tertiary-01');
+    box-shadow: 0px 0px 0px 1px getThemifyVariable('tertiary-01');
   }
-  box-shadow: 0px 0px 0px 1px;
+  
 }
 .vlSelect--disabled {
   pointer-events: none;
@@ -352,9 +353,9 @@ fieldset[disabled] .vlSelect {
   z-index: 50;
   border:$border-width-default solid;
   @include themify() {
-    color: getThemifyVariable('tertiary-01');
+    border-color: getThemifyVariable('tertiary-01');
+    box-shadow: 0px 0px 0px 1px getThemifyVariable('tertiary-01');
   }
-  box-shadow: 0px 0px 0px 1px;
 }
 .vlSelect--active:not(.vlSelect--above) .vlSelect__current,
 .vlSelect--active:not(.vlSelect--above) .vlSelect__input,
