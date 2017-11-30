@@ -14,6 +14,7 @@ import Button from './core/vlButton'
 import Section from './core/vlSection'
 import Form from './core/vlForm'
 import Textarea from './core/vlTextarea'
+import Select from './core/vlSelect'
 
 export default {
   install (Vue) {
@@ -30,5 +31,6 @@ export default {
     Vue.component(Section.name, Section)
     Vue.component(Form.name, Form)
     Vue.component(Textarea.name, Textarea)
+    Vue.component(Select.name, Select)
   }
 }

@@ -1,0 +1,1 @@
+Forked from vue-multiselect https://github.com/shentao/vue-multiselect

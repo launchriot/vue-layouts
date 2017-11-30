@@ -105,6 +105,10 @@ export default {
           display: block;
           font-size: 3em;
           text-align: center;
+          @include themify() {
+            color: getThemifyVariable('border');
+          }
+          transition: all .2s ease-in-out;
         }
 
         a {
@@ -112,11 +116,18 @@ export default {
             color: getThemifyVariable('border');
           }
           text-decoration: none;
+          transition: all .2s ease-in-out;
         }
 
     &.is-active, &:hover {
       @include themify() {
         border-color: getThemifyVariable('tertiary-01');
+      }
+
+      .tab-icon-wrapper {
+        @include themify() {
+          color: getThemifyVariable('ink');
+        }
       }
 
       a {
