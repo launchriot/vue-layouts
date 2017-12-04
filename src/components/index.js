@@ -15,6 +15,14 @@ import Section from './core/vlSection'
 import Form from './core/vlForm'
 import Textarea from './core/vlTextarea'
 import Select from './core/vlSelect'
+import Modal from './core/vlModal'
+import Card from './core/vlCard'
+import Panel from './core/vlPanel'
+import Box from './core/vlBox'
+import Datepicker from './core/vlDatepicker'
+import Checkbox from './core/vlCheckbox'
+import Radio from './core/vlRadio'
+import InputTooltip from './core/vlInputTooltip'
 
 export default {
   install (Vue) {
@@ -32,5 +40,13 @@ export default {
     Vue.component(Form.name, Form)
     Vue.component(Textarea.name, Textarea)
     Vue.component(Select.name, Select)
+    Vue.component(Modal.name, Modal)
+    Vue.component(Card.name, Card)
+    Vue.component(Panel.name, Panel)
+    Vue.component(Box.name, Box)
+    Vue.component(Datepicker.name, Datepicker)
+    Vue.component(Checkbox.name, Checkbox)
+    Vue.component(Radio.name, Radio)
+    Vue.component(InputTooltip.name, InputTooltip)
   }
 }
